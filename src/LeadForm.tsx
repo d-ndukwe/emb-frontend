@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, type Variants } from 'framer-motion';
 import axios from 'axios';
 
 // 1. Matches your Django database exactly
@@ -19,8 +19,8 @@ type FormData = {
 const slideVariants = {
   hidden: { x: 50, opacity: 0 },
   visible: { x: 0, opacity: 1, transition: { duration: 0.3, ease: 'easeOut' } },
-  exit: { x: -50, opacity: 0, transition: { duration: 0.2, ease: 'easeIn' } },
-};
+  exit: { x: -50, opacity: 0, transition: { duration: 0.3, ease: 'easeIn' } }
+} as Variants
 
 // 3. Product catalogue with icons
 const PRODUCTS = [
